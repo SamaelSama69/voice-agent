@@ -1,0 +1,40 @@
+[
+  {
+    "name": "successful_cancellation",
+    "input": "Cancel my appointment",
+    "conversation": [
+      "Raghavendra",
+      "9666544106",
+      "yes"
+    ],
+    "expected": {
+      "tool": "cancel_appointment",
+      "status": "success"
+    }
+  },
+  {
+    "name": "cancel_without_confirmation",
+    "input": "Cancel my appointment",
+    "conversation": [
+      "Raghavendra",
+      "9666544106",
+      "no"
+    ],
+    "expected": {
+      "confirmation_received": false,
+      "tool_called": false
+    }
+  },
+  {
+    "name": "appointment_not_found",
+    "input": "Cancel my appointment",
+    "conversation": [
+      "Raman",
+      "1234567890"
+    ],
+    "expected": {
+      "status": "failed",
+      "appointment_found": false
+    }
+  }
+]
