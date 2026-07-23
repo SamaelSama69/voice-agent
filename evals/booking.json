@@ -1,0 +1,91 @@
+[
+  {
+    "name": "successful_booking",
+    "input": "Book Dr Sindhura tomorrow",
+    "expected": {
+      "tool": "book_appointment",
+      "doctor": "Dr. Sindhura Mandava",
+      "date": "2026-06-21",
+      "slot": "02:00 PM",
+      "status": "success"
+    }
+  },
+  {
+    "name": "missing_phone_information",
+    "input": "Book Dr Sindhura tomorrow",
+    "conversation": [
+      "Raghavendra",
+      "9876543210",
+      "2 PM",
+      "yes"
+    ],
+    "expected": {
+      "requires_phone": true,
+      "tool": "book_appointment",
+      "status": "success"
+    }
+  },
+  {
+    "name": "duplicate_appointment",
+    "input": "Book Dr Sindhura tomorrow",
+    "conversation": [
+      "Raghavendra",
+      "9876543210",
+      "2 PM",
+      "yes"
+    ],
+    "expected": {
+      "tool": "book_appointment",
+      "status": "failed",
+      "message": "you already have this appointment booked"
+    }
+  },
+  {
+    "name": "slot_unavailable",
+    "input": "Book Dr Sindhura tomorrow at 1 PM",
+    "conversation": [
+      "Ravi",
+      "9999999999"
+    ],
+    "expected": {
+      "alternative_slots": true,
+      "requested_slot": "01:00 PM",
+      "available_slot": "11:00 AM"
+    }
+  },
+  {
+    "name": "speciality_based_booking",
+    "input": "I need to book appointment for cardiologist",
+    "conversation": [
+      "Gopi",
+      "0000999988"
+    ],
+    "expected": {
+      "doctor_lookup": true,
+      "speciality": "Cardiology"
+    }
+  },
+  {
+    "name": "language_preference",
+    "input": "I am Telugu person so suggest doctor who knows Telugu",
+    "expected": {
+      "language": "Telugu",
+      "doctor_filter": true
+    }
+  },
+  {
+    "name": "booking_rejected",
+    "input": "Book appointment",
+    "conversation": [
+      "Gopi",
+      "0000999988",
+      "2026-06-22",
+      "09:00 AM",
+      "no"
+    ],
+    "expected": {
+      "confirmation_received": false,
+      "tool_called": false
+    }
+  }
+]

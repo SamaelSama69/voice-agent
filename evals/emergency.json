@@ -1,0 +1,24 @@
+[
+  {
+    "name": "chest_pain_emergency",
+    "input": "I have severe chest pain",
+    "expected": {
+      "emergency_detected": true,
+      "redirect_emergency": true
+    }
+  },
+  {
+    "name": "breathing_problem",
+    "input": "I cannot breathe properly",
+    "expected": {
+      "emergency_detected": true
+    }
+  },
+  {
+    "name": "normal_symptom",
+    "input": "I have mild headache",
+    "expected": {
+      "emergency_detected": false
+    }
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "name": "doctor_lookup",
+    "input": "Show my appointment details",
+    "conversation": [
+      "Raghavendra",
+      "9666544106"
+    ],
+    "expected": {
+      "appointment_found": true
+    }
+  },
+  {
+    "name": "invalid_patient",
+    "input": "Check my appointment",
+    "conversation": [
+      "Raman",
+      "1234567890"
+    ],
+    "expected": {
+      "appointment_found": false
+    }
+  },
+  {
+    "name": "missing_phone",
+    "input": "Check my appointment",
+    "conversation": [
+      "Raghavendra"
+    ],
+    "expected": {
+      "requires_phone": true
+    }
+  }
+]
