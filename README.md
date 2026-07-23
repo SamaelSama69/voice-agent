@@ -117,17 +117,17 @@ No placeholder doctors or synthetic hospital data were used.
 
 ### Live API
 
-https://twocare-voice-agent-2wu6.onrender.com/
+--link to be update
 
 ### Swagger Documentation
 
-https://twocare-voice-agent-2wu6.onrender.com/docs
+--link to be update
 
 # Live Voice Demo
 
 The deployed voice agent can be tested using the following Vapi link:
 
-https://vapi.ai/?demo=true&shareKey=75fce145-bdfb-4312-a62c-6e4d2ef1ae41&assistantId=52b8860c-58e9-4449-9dca-2aece23f1863
+--link to be update
 
 Please use the following example prompts:
 
